@@ -19,9 +19,9 @@ export default async function RootLayout({
       <head />
       <body>
         <SessionProvider session={session}>
-          {/* {!session ? (
+          {!session ? (
             <Login/>
-          ): ( */}
+          ): (
             <div className='flex'>
             {/* side nav */}
             <div className='bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]'>
@@ -34,8 +34,8 @@ export default async function RootLayout({
               {children}
             </div>
           </div>
-          {/* )
-          } */}
+          )
+          }
         </SessionProvider>
       </body>
     </html>
