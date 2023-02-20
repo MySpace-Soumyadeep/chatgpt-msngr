@@ -24,7 +24,7 @@ export default async function RootLayout({
           ): (
             <div className='flex'>
             {/* side nav */}
-            <div className='bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]'>
+            <div className='bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[14rem]'>
               <SideNav />
             </div>
 
