@@ -1,8 +1,22 @@
+import openai from "./chatgpt"
 
-function queryApi() {
-  return (
-    <div>queryApi</div>
-  )
+const query = async(prompt: string, chatId: string, model:string) => {
+
+const res = await openai.createCompletion({
+  model,
+  prompt,
+  //by manipulating temperature and topP values, we are telling chat GPT to be more creative or more logical
+  //with 0.9 -- creative
+  temperature: 0.9,
+  max_tokens: 1000,
+  top_p: 1,
+  frequency_penalty:0,
+  presence_penalty:0,
+})
+.then(res => res.data.choices[0].text)
+.catch(err => `ChatGPT was unable to find an answer for that! (Error: ${err.message})`)
+
+return res;
 }
 
-export default queryApi
+export default query

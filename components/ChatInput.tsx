@@ -25,9 +25,9 @@ function ChatInput({ chatId }: Props) {
     const input = prompt.trim();
     setPrompt("")
 
-    const message: Message ={
+    const message: Message = {
       text: input,
-      createdAt: serverTimestamp,
+      createdAt: serverTimestamp(),
       user: {
         _id: session?.user?.email!,
         name: session?.user?.name!,
@@ -38,7 +38,7 @@ function ChatInput({ chatId }: Props) {
     await addDoc(
       collection(db, 'users', session?.user?.email!, 'chats', chatId, 'messages'),
       message
-    )
+    );
 
     //toast notification - loading
     const notification = toast.loading('ChatGPT is thinking...')
