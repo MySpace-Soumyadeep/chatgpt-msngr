@@ -11,7 +11,7 @@ function Message({
     const isChatGPT = message.user.name === "ChatGPT";
 
     return (
-        <div className={`py-5 tex-white ${isChatGPT && "bg-[#434654]"}`}>
+        <div className={`py-5 text-white ${isChatGPT && "bg-[#434654]"}`}>
             <div className="flex space-x-5 px-10 max-w-2xl mx-auto">
                 <img src={message.user.avatar}
                     alt=""
